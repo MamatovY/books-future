@@ -9,6 +9,7 @@
   color: #FFF;
   font-weight: 500;
   @include adaptive-value('font-size', 20, 10, 1);
+  @include adaptive-value('padding-bottom', 50, 25, 1);
 }
 
 body {

@@ -42,9 +42,24 @@
 
         &-description {
             p {
-                @include adaptive-value('font-size', 16, 8, 1);
+                @include adaptive-value('font-size', 14, 6, 1);
             }
         }
 
+    }
+}
+
+@media(max-width:900px) {
+    .bookPage {
+        grid-template-columns: 1fr;
+
+        &__img {
+            width: 40%;
+            margin: 0 auto;
+
+            img {
+                height: auto;
+            }
+        }
     }
 }

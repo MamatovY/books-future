@@ -1,7 +1,6 @@
 import { useCallback, useState } from "react";
 import { useHttp } from "../../hooks/http.hook";
 
-
 const useBookService = () => {
     const [total, setTotal] = useState(0)
     const { process, setProcess, request, clearError, } = useHttp()
