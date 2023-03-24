@@ -36,9 +36,11 @@ const BookPage = () => {
         <>
             {process === 'loading' ? <h1>Loading...</h1>
                 : book && <div className="container">
-                    <Link to='/' className='bookPage__back'>
-                        <MdOutlineArrowBackIos /> <h3>На главную</h3>
-                    </Link>
+                    <div className='bookPage__back'>
+                        <Link to='/'>
+                            <MdOutlineArrowBackIos /> <h3>На главную</h3>
+                        </Link>
+                    </div>
                     <div className="bookPage">
                         <div className="bookPage__img">
                             <img src={img} alt="" />

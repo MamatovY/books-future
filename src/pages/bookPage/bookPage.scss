@@ -7,13 +7,24 @@
     @include adaptive-value('gap', 50, 25, 1);
 
     &__back {
-        display: flex;
         text-align: left;
-        align-items: center;
         @include adaptive-value('margin-bottom', 25, 12, 1);
 
+        a {
+            display: flex;
+            text-align: right;
+            @include adaptive-value('width', 180, 110, 1);
+            align-items: center;
+        }
+
+        a:hover {
+            color: #fff;
+            transform: scale(0.9);
+            transition: all 0.25s;
+        }
+
         svg {
-            width: 3%;
+            width: 22%;
         }
 
     }

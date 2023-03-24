@@ -19,9 +19,13 @@
             color: #292929;
         }
 
-
-
         &__item {
+
+            &:hover {
+                transform: scale(1.03);
+                transition: all 0.25s;
+            }
+
             background: #D4B996FF;
             @include adaptive-value('padding', 20, 10, 1);
             box-shadow: 0 5px 5px rgba(212, 185, 150, .5);
@@ -62,6 +66,11 @@
         text-decoration: underline;
         color: blue;
         cursor: pointer;
+
+        &:hover {
+            transform: scale(0.9);
+            transition: all 0.25s;
+        }
     }
 
     .loading {
