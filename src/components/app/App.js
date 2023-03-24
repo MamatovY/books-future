@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from '../header'
 import './App.scss'
 import { BookPage, Main } from '../../pages'
@@ -18,6 +18,8 @@ function App() {
     if (newItemLoading) {
       onRequest(0, true)
     }
+
+    // eslint-disable-next-line
   }, [params])
 
   const updateBooks = (data, initial) => {

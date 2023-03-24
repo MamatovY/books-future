@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useBookService from '../../components/services/bookService';
 import { MdOutlineArrowBackIos } from 'react-icons/md'
@@ -15,6 +15,7 @@ const BookPage = () => {
     useEffect(() => {
         getBook(id)
             .then(response => setBook(response))
+        // eslint-disable-next-line
     }, [])
     let description = ''
     let img = ''

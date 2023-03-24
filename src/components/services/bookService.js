@@ -3,7 +3,7 @@ import { useHttp } from "../../hooks/http.hook";
 
 const useBookService = () => {
     const [total, setTotal] = useState(0)
-    const { process, setProcess, request, clearError, } = useHttp()
+    const { process, setProcess, request } = useHttp()
 
     const __apiKey = 'key=AIzaSyA9ESmiBbNEK5a7Xmg485w2GgUIcwQwcDo'
     const __apiBase = 'https://www.googleapis.com/books/v1/volumes'
@@ -37,7 +37,6 @@ const useBookService = () => {
     return {
         process,
         setProcess,
-        clearError,
         getAllBooks,
         getBook,
         total
