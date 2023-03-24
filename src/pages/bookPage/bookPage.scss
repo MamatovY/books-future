@@ -1,0 +1,50 @@
+@import './../../assets/scss/mixin.scss';
+
+.bookPage {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: left;
+    @include adaptive-value('gap', 50, 25, 1);
+
+    &__back {
+        display: flex;
+        text-align: left;
+        align-items: center;
+        @include adaptive-value('margin-bottom', 25, 12, 1);
+
+        svg {
+            width: 3%;
+        }
+
+    }
+
+    &__img {
+        img {
+            height: auto;
+        }
+    }
+
+    &__main {
+
+        span {
+            color: #fff;
+            font-weight: 600;
+            @include adaptive-value('font-size', 24, 11, 1);
+        }
+
+        &-title {
+            @include adaptive-value('margin-bottom', 30, 15, 1);
+        }
+
+        &-authors {
+            @include adaptive-value('margin-bottom', 30, 15, 1);
+        }
+
+        &-description {
+            p {
+                @include adaptive-value('font-size', 16, 8, 1);
+            }
+        }
+
+    }
+}

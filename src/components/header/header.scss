@@ -1,0 +1,43 @@
+@import './../../assets/scss/mixin.scss';
+
+.header {
+    background-image: url('./../../assets/img/s08pj8uAxDM.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    @include adaptive-indent('padding', 100, 50, 0, 0, 1);
+    @include adaptive-value('margin-bottom', 50, 10, 1);
+
+    &__search {
+        display: grid;
+        grid-template-columns: 10fr 1fr;
+        background: #FFF;
+        justify-content: space-between;
+        border-radius: 5px;
+        margin: 0 auto;
+        @include adaptive-value('width', 450, 225, 1);
+        @include adaptive-value('padding', 5, 5, 1);
+        @include adaptive-value('gap', 10, 5, 1);
+
+        svg {
+            color: #292929;
+            // border: 1px solid red;
+        }
+    }
+
+    &__selects {
+        display: flex;
+        justify-content: center;
+        @include adaptive-value('gap', 50, 25, 1);
+
+        &__category,
+        &__sorting {
+            @include adaptive-value('margin-top', 50, 25, 1);
+            @include adaptive-value('width', 200, 100, 1);
+
+            .form-select {
+                @include adaptive-value('font-size', 20, 10, 1);
+            }
+        }
+    }
+}
