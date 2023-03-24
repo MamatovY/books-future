@@ -2,10 +2,11 @@ import './header.scss'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { useState } from 'react'
 
-const Header = ({ setParams, setNewItemLoading }) => {
+const Header = ({ process, setParams, setNewItemLoading }) => {
     const [search, setSearch] = useState('')
     const [category, setCategory] = useState('')
     const [sorting, setSorting] = useState('relevance')
+    const [msg, setMsg] = useState(false)
 
     const submit = (e) => {
         //Нужно чтобы переходил на главную при нажатии search
@@ -24,6 +25,11 @@ const Header = ({ setParams, setNewItemLoading }) => {
             query += `q=subject:${category}`
             //Добавить sorting в query
             query += `&orderBy=${sorting}`
+        }
+        if (query) {
+            setMsg(false)
+        } else {
+            setMsg(true)
         }
 
         setNewItemLoading(true)
@@ -73,6 +79,8 @@ const Header = ({ setParams, setNewItemLoading }) => {
                         </div>
                     </div>
                 </form>
+                {msg && <h3 className='header__errorMsg'>Заполните данные</h3>}
+                {process === 'error' && <h3 className='header__errorMsg'>Что-то пошло не так</h3>}
             </div>
         </header>
     )

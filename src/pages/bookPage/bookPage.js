@@ -5,11 +5,12 @@ import { MdOutlineArrowBackIos } from 'react-icons/md'
 import './bookPage.scss'
 
 import skeletonBook from './../../assets/img/1616987662_5-p-fon-dlya-oblozhki-knigi-7.jpg'
+import Spinner from '../../components/spinner';
 
 const BookPage = () => {
     const [book, setBook] = useState(null)
     const { id } = useParams();
-    const { process, setProcess, clearError, getBook } = useBookService()
+    const { process, getBook } = useBookService()
 
     useEffect(() => {
         getBook(id)
@@ -32,9 +33,11 @@ const BookPage = () => {
             description = book.description.replaceAll('<p>', '').replaceAll('</p>', '')
         }
     }
+    const error = process === 'error' && book ? <h3>Что-то пошло не так...</h3> : null
     return (
         <>
-            {process === 'loading' ? <h1>Loading...</h1>
+            {error}
+            {process === 'loading' ? <div ><Spinner /></div>
                 : book && <div className="container">
                     <div className='bookPage__back'>
                         <Link to='/'>

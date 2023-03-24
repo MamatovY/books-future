@@ -7,12 +7,11 @@ import useBookService from '../services/bookService'
 
 function App() {
   const [books, setBooks] = useState([])
-
   const [params, setParams] = useState('')
   const [offset, setOffset] = useState(0)
   const [newItemLoading, setNewItemLoading] = useState(true)
 
-  const { request, process, getAllBooks, total } = useBookService()
+  const { process, getAllBooks, total } = useBookService()
 
   useEffect(() => {
     //Чтобы когда каждый раз сохраняешь код, не работал getAllBooks
@@ -46,7 +45,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header setNewItemLoading={setNewItemLoading} setParams={setParams} />
+        <Header process={process} setNewItemLoading={setNewItemLoading} setParams={setParams} />
         <Routes>
           <Route path='/' element={
             <Main

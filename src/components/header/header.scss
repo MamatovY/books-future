@@ -8,6 +8,10 @@
     @include adaptive-indent('padding', 100, 50, 0, 0, 1);
     @include adaptive-value('margin-bottom', 50, 10, 1);
 
+    &__errorMsg {
+        @include adaptive-value('margin-top', 50, 10, 1);
+    }
+
     &__search {
         display: grid;
         grid-template-columns: 10fr 1fr;
